@@ -1,13 +1,6 @@
 from PricePredictionMethods import methods
-import yfinance as yf
 
-#ticker = input("Welcome! Please enter the stock you are looking for! ")
-
-ticker = "BTC-USD"
-stock = yf.Ticker(ticker)
-data = stock.history(period= '1mo')
-S = data["Close"].iloc[-1]
-
+S = 100  # Hisse senedi fiyatı
 K = 100  # Kullanım fiyatı
 T = 1    # Süre (yıl)
 r = 0.05 # Faiz oranı
