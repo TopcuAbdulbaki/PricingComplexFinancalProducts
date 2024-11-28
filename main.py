@@ -2,8 +2,9 @@ from PricePredictionMethods import methods
 import yfinance as yf
 
 #ticker = input("Welcome! Please enter the stock you are looking for! ")
-
-ticker = "BTC-USD"
+#deneme kolaylığı olsun diye ticker input kısmı yoruma alındı yerine sabit
+#ticker konuldu 
+ticker = "ASELS"
 stock = yf.Ticker(ticker)
 data = stock.history(period= '1mo')
 S = data["Close"].iloc[-1]
