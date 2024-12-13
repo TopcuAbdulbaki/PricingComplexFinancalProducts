@@ -10,15 +10,15 @@ stock = yf.Ticker(ticker)
 data = stock.history(period= '1mo')
 S = data["Close"].iloc[-1]
 
-K = 100  # Kullanım fiyatı
+K = 100509  # Kullanım fiyatı
 T = 1    # Süre (yıl)
-r = 0.05 # Faiz oranı
+r = 5 # Faiz oranı
 sigma = 0.2 # Volatilite
-num_simulations = 10000 # Simülasyon sayısı
+num_simulations = 1000000 # Simülasyon sayısı
 
 # Fiyatlandırma
 bs_price = methods.black_scholes(S, K, T, r, sigma)
 mc_price = methods.monte_carlo_option_price(S, K, T, r, sigma, num_simulations)
 
-print(f"Black-Scholes Fiyatı: {bs_price}")
-print(f"Monte Carlo Simülasyon Fiyatı: {mc_price}")
+print(f"Black-Scholes Fiyati: {bs_price}")
+print(f"Monte Carlo Simulasyon Fiyati: {mc_price}")
